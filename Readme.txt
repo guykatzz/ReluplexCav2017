@@ -9,7 +9,7 @@ Reluplex algorithm, as described in the paper:
    Verification (CAV). Heidelberg, Germany, July 2017.
 
 This file contains instructions for compiling Reluplex and for running
-the experiments described in the paper, and alsosome information on
+the experiments described in the paper, and also some information on
 the Reluplex code and the various folders.
 
 Compilation Instructions
@@ -78,7 +78,7 @@ contain multiple lines. Also, note that these files are only
 created/updated when a query finishes, so they will likely appear
 only some time after an experiment has started.
 
-The second kind of log files that will appear under the "logs" folder
+The second kind of log file that will appear under the "logs" folder
 is the statistics log. These logs will have the word "stats" in their
 names, and will contain statistics that Reluplex prints roughly every
 500 iterations of its main loop. These logs will appear immediately
