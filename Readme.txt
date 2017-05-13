@@ -8,6 +8,10 @@ Reluplex algorithm, as described in the paper:
    Deep Neural Networks. Proc. 29th Int. Conf. on Computer Aided
    Verification (CAV). Heidelberg, Germany, July 2017.
 
+The paper (with its supplementary material) may be found at:
+
+    https://arxiv.org/abs/1702.01135
+
 This file contains instructions for compiling Reluplex and for running
 the experiments described in the paper, and also some information on
 the Reluplex code and the various folders.
@@ -66,7 +70,7 @@ summary log, in which each query to Reluplex is summarized by a line like this:
 The fields in each line in the summary file are:
  - The network being tested
  - Result (SAT/UNSAT/TIMEOUT/ERROR)
- - Time in millseconds
+ - Time in milliseconds
  - Time in HH:MM:SS format
  - Maximal stack depth reached
  - Number of visited states
@@ -148,7 +152,7 @@ Information regarding the Reluplex code
 The main components of the tool are:
 
 1. reluplex/Reluplex.h:
-   The main class, implementing the core reluplex algorithm.
+   The main class, implementing the core Reluplex algorithm.
 
 2. glpk-4.60: (folder)
    The glpk open-source LP solver, plus some modifications.
@@ -197,7 +201,7 @@ Important member variables of the Reluplex class:
 
   _basicVariables: the set of variables that are currently basic.
 
-  _reluPairs: all pairs of variables specificed as ReLU pairs.
+  _reluPairs: all pairs of variables specified as ReLU pairs.
 
   _dissolvedReluVariables: ReLU pairs that have been eliminated.
 
