@@ -2372,8 +2372,10 @@ public:
             ( _upperBounds[var].getBound() - _assignment[var] );
 
         unsigned pivotCandidate;
-        if ( !findPivotCandidate( var, increase, pivotCandidate, false ) )
-            return false;
+        if ( !findPivotCandidate( var, increase, pivotCandidate, false ) ){
+            printf("Can't findPivotCandidate for a variable\n");
+            return true;
+        }
 
         log( Stringf( "\nPivotAndUpdate: <%s, %5.2lf, %s>\n",
                       toName( var ).ascii(),
