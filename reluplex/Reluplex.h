@@ -2373,7 +2373,7 @@ public:
 
         unsigned pivotCandidate;
         if ( !findPivotCandidate( var, increase, pivotCandidate, false ) ){
-            printf("Can't findPivotCandidate for a variable\n");
+            log("Can't findPivotCandidate for a variable\n");
             return true;
         }
 
