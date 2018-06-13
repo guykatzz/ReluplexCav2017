@@ -3648,7 +3648,10 @@ public:
                 while ( ( basic != _basicVariables.end() ) && !needToRestart )
                 {
                     needToRestart = tightenBoundsOnRow( *basic, numLearnedBounds );
-                    ++basic;
+                    if ( !needToRestart )
+                    {
+                        ++basic;
+                    }
                 }
 
                 if ( !needToRestart )
