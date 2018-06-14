@@ -1,5 +1,5 @@
 /*********************                                                        */
-/*! \file String.h
+/*! \file MString.h
  ** \verbatim
  ** Top contributors (to current version):
  **   Guy Katz
