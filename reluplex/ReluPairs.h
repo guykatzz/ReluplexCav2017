@@ -14,7 +14,7 @@
 #define __ReluPairs_h__
 
 #include "Map.h"
-#include "Stringf.h"
+#include "MStringf.h"
 
 class ReluPairs
 {

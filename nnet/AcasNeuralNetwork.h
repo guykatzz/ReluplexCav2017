@@ -13,7 +13,7 @@
 #ifndef __AcasNeuralNetwork_h__
 #define __AcasNeuralNetwork_h__
 
-#include "String.h"
+#include "MString.h"
 #include "nnet.h"
 #include <cassert>
 #include <iomanip>
