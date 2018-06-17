@@ -16,7 +16,7 @@
 #include "AcasNeuralNetwork.h"
 #include "File.h"
 #include "Reluplex.h"
-#include "String.h"
+#include "MString.h"
 
 const char *FULL_NET_PATH = "./nnet/ACASXU_run2a_4_5_batch_2000.nnet";
 

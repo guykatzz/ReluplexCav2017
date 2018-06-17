@@ -16,7 +16,7 @@
 #include "AcasNeuralNetwork.h"
 #include "File.h"
 #include "Reluplex.h"
-#include "String.h"
+#include "MString.h"
 
 struct Index
 {

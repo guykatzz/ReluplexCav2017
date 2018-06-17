@@ -16,7 +16,7 @@
 #include "IReluplex.h"
 #include "List.h"
 #include "Pair.h"
-#include "Time.h"
+#include "TimeUtils.h"
 #include "glpk.h"
 
 class GlpkWrapper

@@ -15,7 +15,7 @@
 
 #include "IConstSimpleData.h"
 #include "IHeapData.h"
-#include "Stringf.h"
+#include "MStringf.h"
 #include <cstdio>
 
 class ConstSimpleData : public IConstSimpleData

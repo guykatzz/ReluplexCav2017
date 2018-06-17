@@ -20,7 +20,7 @@
 #include "Error.h"
 #include "HeapData.h"
 #include "IFile.h"
-#include "String.h"
+#include "MString.h"
 #include <sys/stat.h>
 #include <unistd.h>
 

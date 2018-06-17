@@ -19,7 +19,7 @@
 #include "Pair.h"
 #include "Set.h"
 #include "Tableau.h"
-#include "String.h"
+#include "MString.h"
 
 class ReluPairs;
 class VariableBound;

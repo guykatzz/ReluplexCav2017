@@ -1,5 +1,5 @@
 /*********************                                                        */
-/*! \file Time.h
+/*! \file TimeUtils.h
  ** \verbatim
  ** Top contributors (to current version):
  **   Guy Katz
@@ -15,7 +15,7 @@
 
 #include <time.h>
 #include <sys/time.h>
-#include "Stringf.h"
+#include "MStringf.h"
 
 class Time
 {

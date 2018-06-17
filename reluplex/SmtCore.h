@@ -15,9 +15,9 @@
 
 #include "IReluplex.h"
 #include "Stack.h"
-#include "Stringf.h"
+#include "MStringf.h"
 #include "Tableau.h"
-#include "Time.h"
+#include "TimeUtils.h"
 #include "VariableBound.h"
 
 // The number of times a ReLU pair can be corrected before a split occurs.
