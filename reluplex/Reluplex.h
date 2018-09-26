@@ -1867,6 +1867,11 @@ public:
         _basicVariables.insert( variable );
     }
 
+    void markOutConstraint( unsigned variable )
+    {
+        _outConstraintVariables.insert( variable );
+    }
+
     void setName( unsigned variable, String name )
     {
         log( Stringf( "Setting name: %s --> %u\n", name.ascii(), variable ) );
@@ -2569,13 +2574,22 @@ public:
         printStatistics();
 
         for ( const auto &basic : _basicVariables )
-            makeAllBoundsFiniteOnRow( basic );
+            /*
+             * Original code make all basic variable rows finite, including the final output constraint variables.
+             * Then it is possible to set a tightened bound conflicting with output constraint. In this case, original
+             * code will throw InvariantViolationError due to invalid bounds (e.g., [0, -0.128]), but this is indeed a
+             * case for quickly completing the search and return UNSAT. One fix is to avoid bound tightening for output
+             * constraint variables during initialization. Temporarily disabling an optimization should not affect the
+             * correctness of entire procedure.
+             */
+            if ( !_outConstraintVariables.exists( basic ) )
+                makeAllBoundsFiniteOnRow( basic );
 
         countVarsWithInfiniteBounds();
         log( Stringf( "makeAllBoundsFinite -- Done (%u vars with infinite bounds)\n", _varsWithInfiniteBounds ) );
         printStatistics();
 
-        if ( _varsWithInfiniteBounds != 0 )
+        if ( _varsWithInfiniteBounds > _outConstraintVariables.size() )
             throw Error( Error::EXPECTED_NO_INFINITE_VARS );
     }
 
@@ -3342,6 +3356,7 @@ private:
     double *_assignment;
     double *_preprocessedAssignment;
     Set<unsigned> _basicVariables;
+    Set<unsigned> _outConstraintVariables;
     Set<unsigned> _preprocessedBasicVariables;
     Map<unsigned, String> _variableNames;
     ReluPairs _reluPairs;
