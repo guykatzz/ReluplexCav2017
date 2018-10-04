@@ -250,9 +250,16 @@ public:
 
     void initialize()
     {
-        initialUpdate();
-        makeAllBoundsFinite();
-        _wasInitialized = true;
+        try
+        {
+            initialUpdate();
+            makeAllBoundsFinite();
+            _wasInitialized = true;
+        }
+        catch ( const InvariantViolationError &e )
+        {
+            _finalStatus = Reluplex::UNSAT;
+        }
     }
 
     FinalStatus solve()
@@ -264,6 +271,15 @@ public:
         {
             if ( !_wasInitialized )
                 initialize();
+
+            if ( _finalStatus == Reluplex::UNSAT )
+            {
+                // During the initialization phase it was already discovered
+                // that the query is UNSAT; can stop here
+                end = Time::sampleMicro();
+                _totalProgressTimeMilli += Time::timePassed( start, end );
+                return _finalStatus;
+            }
 
             countVarsWithInfiniteBounds();
             if ( !eliminateAuxVariables() )
