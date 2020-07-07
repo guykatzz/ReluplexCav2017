@@ -1,3 +1,8 @@
+NOTE: This repo is not maintained anymore. You can try our new tool 
+called Marabou, which implements the Reluplex algorithm and other 
+improved techniques (https://github.com/NeuralNetworkVerification/Marabou).
+
+
 *** Reluplex, May 2017 ***
 
 This repository contains the proof-of-concept implementation of the
